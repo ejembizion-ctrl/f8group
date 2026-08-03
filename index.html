@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortun8 Group | Building Wealth Through Innovation, Knowledge and Real Estate</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#0A5C36',
+                            dark: '#053820',
+                            light: '#10B981',
+                            pale: '#E6F4EA'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-brand-pale selection:text-brand-dark">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand text-white text-xs sm:text-sm py-2 px-4 text-center font-medium">
+        <span>Welcome to Fortun8 Group — Lagos, Nigeria | <a href="#contact" class="underline hover:text-brand-pale">Book a Consultation</a></span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchPage('home')">
+                    <div class="w-10 h-10 rounded-xl bg-brand flex items-center justify-center text-white font-bold text-xl shadow-md">
+                        F8
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black tracking-tight text-gray-900">FORTUN<span class="text-brand">8</span></span>
+                        <span class="block text-[10px] uppercase tracking-widest text-gray-500 font-semibold">Group</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-gray-600">
+                    <button onclick="switchPage('home')" class="nav-link text-brand font-semibold hover:text-brand transition">Home</button>
+                    <button onclick="switchPage('about')" class="nav-link hover:text-brand transition">About</button>
+                    <button onclick="switchPage('businesses')" class="nav-link hover:text-brand transition">Businesses</button>
+                    <button onclick="switchPage('books')" class="nav-link hover:text-brand transition">Books</button>
+                    <button onclick="switchPage('estate-gallery')" class="nav-link hover:text-brand transition">The Estate Gallery</button>
+                    <button onclick="switchPage('house-of-enlightenment')" class="nav-link hover:text-brand transition">House of Enlightenment</button>
+                    <button onclick="switchPage('z-tech')" class="nav-link hover:text-brand transition">Z-Tech Innovations</button>
+                    <button onclick="switchPage('blog')" class="nav-link hover:text-brand transition">Blog</button>
+                    <button onclick="switchPage('podcast')" class="nav-link hover:text-brand transition">Podcast</button>
+                    <button onclick="switchPage('resources')" class="nav-link hover:text-brand transition">Resources</button>
+                    <button onclick="switchPage('contact')" class="nav-link hover:text-brand transition">Contact</button>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button onclick="openBookingModal()" class="bg-brand text-white px-5 py-2.5 rounded-lg text-sm font-semibold shadow-md hover:bg-brand-dark transition transform hover:-translate-y-0.5">
+                        Book Consultation
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-gray-700 hover:text-brand focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-2">
+            <button onclick="switchPage('home'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded text-gray-700 hover:bg-brand-pale font-medium">Home</button>
+            <button onclick="switchPage('about'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded text-gray-700 hover:bg-brand-pale font-medium">About</button>
+            <button onclick="switchPage('businesses'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded text-gray-700 hover:bg-brand-pale font-medium">Businesses</button>
+            <button onclick="switchPage('books'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded text-gray-700 hover:bg-brand-pale font-medium">Books</button>
+            <button onclick="switchPage('estate-gallery'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded text-gray-700 hover:bg-brand-pale font-medium">The Estate Gallery</button>
+            <button onclick="switchPage('house-of-enlightenment'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded text-gray-700 hover:bg-brand-pale font-medium">House of Enlightenment</button>
+            <button onclick="switchPage('z-tech'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded text-gray-700 hover:bg-brand-pale font-medium">Z-Tech Innovations</button>
+            <button onclick="switchPage('blog'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded text-gray-700 hover:bg-brand-pale font-medium">Blog</button>
+            <button onclick="switchPage('podcast'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded text-gray-700 hover:bg-brand-pale font-medium">Podcast</button>
+            <button onclick="switchPage('resources'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded text-gray-700 hover:bg-brand-pale font-medium">Resources</button>
+            <button onclick="switchPage('contact'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded text-gray-700 hover:bg-brand-pale font-medium">Contact</button>
+            <div class="pt-2">
+                <button onclick="openBookingModal(); toggleMobileMenu();" class="w-full bg-brand text-center text-white py-2.5 rounded-lg font-semibold shadow">Book Consultation</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main id="main-content">
+
+        <!-- ================= HOME PAGE ================= -->
+        <div id="page-home" class="page-section">
+            <!-- Hero Section -->
+            <section class="relative bg-gradient-to-br from-brand-dark via-brand to-emerald-900 text-white py-24 lg:py-32 overflow-hidden">
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                    <span class="inline-block bg-white/10 text-brand-pale border border-white/20 text-xs uppercase tracking-widest px-4 py-1.5 rounded-full font-semibold mb-6">
+                        Founded by Boniface Ejembi
+                    </span>
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight max-w-5xl mx-auto leading-tight mb-8">
+                        Building Wealth Through <span class="text-emerald-300 underline decoration-emerald-400/50">Innovation, Knowledge</span> and <span class="text-emerald-300">Real Estate.</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-normal">
+                        Empowering individuals and enterprises across Nigeria and beyond with elite property portfolios, transformative literature, and cutting-edge digital technology solutions.
+                    </p>
+                    
+                    <!-- Hero Buttons -->
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button onclick="switchPage('estate-gallery')" class="bg-white text-brand-dark px-8 py-4 rounded-xl font-bold shadow-lg hover:bg-gray-100 transition transform hover:-translate-y-0.5">
+                            Explore Properties
+                        </button>
+                        <button onclick="switchPage('books')" class="bg-emerald-600 text-white border border-emerald-500 px-8 py-4 rounded-xl font-bold shadow-lg hover:bg-emerald-500 transition transform hover:-translate-y-0.5">
+                            Buy My Books
+                        </button>
+                        <button onclick="openBookingModal()" class="bg-transparent text-white border-2 border-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition">
+                            Book Consultation
+                        </button>
+                        <a href="#newsletter-section" class="bg-emerald-950/60 text-emerald-200 border border-emerald-700 px-8 py-4 rounded-xl font-bold hover:bg-emerald-900 transition">
+                            Join Newsletter
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Subsidiaries / Businesses Preview -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">Our Core Pillars</h2>
+                        <p class="mt-4 text-gray-600 text-lg">Diversified expertise engineered for sustainable growth and long-term value creation.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- The Estate Gallery -->
+                        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition group">
+                            <div class="w-14 h-14 bg-brand-pale text-brand rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand group-hover:text-white transition">
+                                <i class="fa-solid fa-building-shield"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">The Estate Gallery</h3>
+                            <p class="text-gray-600 mb-6 text-sm leading-relaxed">Premium luxury real estate portfolios, secure property acquisitions, and strategic real estate advisory in Lagos, Nigeria.</p>
+                            <button onclick="switchPage('estate-gallery')" class="text-brand font-semibold text-sm inline-flex items-center hover:underline">
+                                Explore Gallery <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                            </button>
+                        </div>
+
+                        <!-- House of Enlightenment -->
+                        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition group">
+                            <div class="w-14 h-14 bg-brand-pale text-brand rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand group-hover:text-white transition">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">House of Enlightenment</h3>
+                            <p class="text-gray-600 mb-6 text-sm leading-relaxed">Community-driven empowerment organization dedicated to intellectual awakening, personal development, and capacity building.</p>
+                            <button onclick="switchPage('house-of-enlightenment')" class="text-brand font-semibold text-sm inline-flex items-center hover:underline">
+                                Learn More <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                            </button>
+                        </div>
+
+                        <!-- Z-Tech Innovations -->
+                        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition group">
+                            <div class="w-14 h-14 bg-brand-pale text-brand rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-brand group-hover:text-white transition">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Z-Tech Innovations</h3>
+                            <p class="text-gray-600 mb-6 text-sm leading-relaxed">Advanced IT solutions, cloud architecture frameworks, cybersecurity consulting, and modern digital infrastructure development.</p>
+                            <button onclick="switchPage('z-tech')" class="text-brand font-semibold text-sm inline-flex items-center hover:underline">
+                                Discover Tech <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Books Section -->
+            <section class="py-20 bg-gray-50 border-t border-gray-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                        <div>
+                            <span class="text-brand font-bold text-sm tracking-wider uppercase">Authored by Boniface Ejembi</span>
+                            <h2 class="text-3xl font-extrabold text-gray-900 mt-1">Featured Masterpiece Books</h2>
+                        </div>
+                        <button onclick="switchPage('books')" class="mt-4 md:mt-0 text-brand font-semibold hover:underline inline-flex items-center">
+                            View All Books <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Book 1 -->
+                        <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between">
+                            <div>
+                                <span class="bg-brand-pale text-brand text-xs font-semibold px-3 py-1 rounded-full">Bestseller</span>
+                                <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-3">100 Prompts That Will Keep You Ahead</h3>
+                                <p class="text-gray-600 mb-6">Unlock maximum productivity, AI mastery, and strategic advantage with 100 carefully curated prompts designed for modern professionals and entrepreneurs.</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                                <span class="text-lg font-bold text-gray-900">Digital Guide</span>
+                                <a href="https://selar.com/q06d10mk41" target="_blank" class="bg-brand text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-brand-dark transition shadow">
+                                    Get on Selar <i class="fa-solid fa-external-link-alt ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Book 2 -->
+                        <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between">
+                            <div>
+                                <span class="bg-brand-pale text-brand text-xs font-semibold px-3 py-1 rounded-full">Essential Read</span>
+                                <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-3">Sleep Like a Baby</h3>
+                                <p class="text-gray-600 mb-6">Master financial peace of mind, strategic corporate governance, and operational security so you can rest completely assured of your investments.</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                                <span class="text-lg font-bold text-gray-900">Digital Guide</span>
+                                <a href="https://selar.com/rtal1z865r" target="_blank" class="bg-brand text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-brand-dark transition shadow">
+                                    Get on Selar <i class="fa-solid fa-external-link-alt ml-1 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latest Blog Posts -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <span class="text-brand font-bold text-sm tracking-wider uppercase">Insights & Wisdom</span>
+                        <h2 class="text-3xl font-extrabold text-gray-900 mt-1">Latest Blog Articles</h2>
+                        <p class="text-gray-600 mt-2">Expert perspectives on real estate due diligence and corporate security.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Blog 1 -->
+                        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition">
+                            <span class="text-xs font-semibold text-brand uppercase tracking-wider">Real Estate</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-2 mb-3">Major Due Diligence Checklist in Real Estate</h3>
+                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">Protect your capital and avoid costly land scams in Nigeria with this comprehensive, step-by-step verification checklist.</p>
+                            <a href="https://ejembiboniface.blogspot.com/2026/01/major-due-diligence-checklist-in-real.html" target="_blank" class="text-brand font-semibold text-sm inline-flex items-center hover:underline">
+                                Read Full Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+
+                        <!-- Blog 2 -->
+                        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition">
+                            <span class="text-xs font-semibold text-brand uppercase tracking-wider">Corporate Security</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-2 mb-3">The Anatomy of Corporate Scam</h3>
+                            <p class="text-gray-600 text-sm mb-6 leading-relaxed">Uncover the hidden patterns behind modern corporate fraud and learn actionable mitigation strategies for your business.</p>
+                            <a href="https://ejembiboniface.blogspot.com/2026/01/the-anatomy-of-corporate-scam.html" target="_blank" class="text-brand font-semibold text-sm inline-flex items-center hover:underline">
+                                Read Full Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="py-20 bg-brand-pale/50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <span class="text-brand font-bold text-sm tracking-wider uppercase">Testimonials</span>
+                        <h2 class="text-3xl font-extrabold text-gray-900 mt-1">What Leaders Are Saying</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Odo Samuel -->
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                            <p class="text-gray-600 italic text-sm mb-6">"Boniface's strategic clarity and commitment to excellence in real estate management are unmatched. Fortun8 Group represents the absolute pinnacle of professionalism."</p>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Odo Samuel</h4>
+                                <span class="text-xs text-gray-500">Business Partner & Investor</span>
+                            </div>
+                        </div>
+
+                        <!-- Emmanuel Oko -->
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                            <p class="text-gray-600 italic text-sm mb-6">"The insights I gained from his advisory and books transformed my approach to wealth building. Fortun8 Group is a phenomenal brand."</p>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Emmanuel Oko</h4>
+                                <span class="text-xs text-gray-500">Tech Entrepreneur</span>
+                            </div>
+                        </div>
+
+                        <!-- Boluwaji Osibanjo -->
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                            <p class="text-gray-600 italic text-sm mb-6">"Integrity, rigorous due diligence, and innovation define everything Boniface Ejembi does. Working with Fortun8 Group gives you total peace of mind."</p>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Boluwaji Osibanjo</h4>
+                                <span class="text-xs text-gray-500">Real Estate Consultant</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Podcast Section -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <div class="max-w-3xl mx-auto bg-gradient-to-r from-gray-900 to-brand-dark text-white p-12 rounded-3xl shadow-xl">
+                        <span class="bg-emerald-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">Audio Experience</span>
+                        <h2 class="text-3xl font-extrabold mt-6 mb-4">Fortun8 Group Podcast</h2>
+                        <p class="text-gray-300 mb-8">Deep dive conversations on wealth creation, real estate dynamics, technology, and leadership.</p>
+                        <div class="inline-block bg-white/10 border border-white/20 px-6 py-3 rounded-xl text-emerald-300 font-bold tracking-widest uppercase">
+                            Coming Soon
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter Section (Web3Forms) -->
+            <section id="newsletter-section" class="py-20 bg-gray-900 text-white">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="text-3xl font-extrabold mb-4">Stay Ahead with Fortun8 Insights</h2>
+                    <p class="text-gray-400 mb-8 max-w-xl mx-auto">Get exclusive updates on real estate opportunities, tech trends, and wealth strategies delivered directly to your inbox.</p>
+                    
+                    <form action="https://api.web3forms.com/submit" method="POST" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+                        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                        <input type="hidden" name="to" value="ztechinnovationltd@gmail.com">
+                        <input type="email" name="email" required placeholder="Enter your email address" class="flex-grow px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-brand">
+                        <button type="submit" class="bg-brand text-white px-6 py-3 rounded-xl font-bold hover:bg-brand-dark transition">Subscribe</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= ABOUT PAGE ================= -->
+        <div id="page-about" class="page-section hidden py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-16">
+                    <span class="text-brand font-bold text-sm tracking-wider uppercase">About Fortun8 Group</span>
+                    <h1 class="text-4xl font-extrabold text-gray-900 mt-2 mb-6">Founded on Vision, Integrity & Excellence</h1>
+                    <p class="text-lg text-gray-600 leading-relaxed">Fortun8 Group is a multi-sector parent company established to incubate, scale, and direct high-impact enterprises across real estate, education, community development, and digital technology.</p>
+                </div>
+
+                <!-- Founder Profile -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 bg-gray-50 p-8 lg:p-12 rounded-3xl border border-gray-100">
+                    <div>
+                        <span class="text-brand font-bold text-xs uppercase tracking-widest">Leadership</span>
+                        <h2 class="text-3xl font-bold text-gray-900 mt-1 mb-4">Boniface Ejembi</h2>
+                        <h3 class="text-lg font-semibold text-emerald-700 mb-4">Founder & Chief Executive Officer</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Boniface Ejembi is a distinguished leader, sales manager, and strategist with extensive multi-disciplinary expertise. A graduate in Chemical Engineering from the Federal University of Technology, Minna, he also pursues advanced studies in Information Technology with a specialization in Cybersecurity at Miva Open University. 
+                        </p>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            With over six years of professional sales and administrative management experience, Boniface brings rigorous academic grounding, sharp business acumen, and an unwavering commitment to societal transformation through Fortun8 Group.
+                        </p>
+                    </div>
+                    <div class="bg-brand-pale rounded-2xl p-8 border border-emerald-100">
+                        <h4 class="text-xl font-bold text-gray-900 mb-4">Core Values</h4>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check-circle text-brand mt-1 mr-3"></i>
+                                <div><strong>Integrity:</strong> Uncompromising transparency and due diligence in every business transaction.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check-circle text-brand mt-1 mr-3"></i>
+                                <div><strong>Innovation:</strong> Leveraging technology and modern frameworks to solve complex challenges.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check-circle text-brand mt-1 mr-3"></i>
+                                <div><strong>Empowerment:</strong> Equipping people with knowledge, properties, and digital tools to build lasting wealth.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Vision & Mission -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                        <div class="w-12 h-12 bg-brand text-white rounded-xl flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Our Vision</h3>
+                        <p class="text-gray-600 leading-relaxed">To be Africa's leading conglomerate driving wealth creation through trusted real estate assets, digital innovation, and intellectual capital.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                        <div class="w-12 h-12 bg-brand text-white rounded-xl flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Our Mission</h3>
+                        <p class="text-gray-600 leading-relaxed">To deliver world-class products and services across our subsidiaries while upholding the highest standards of corporate governance and customer satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= BUSINESSES PAGE (Scalable Architecture) ================= -->
+        <div id="page-businesses" class="page-section hidden py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand font-bold text-sm tracking-wider uppercase">Corporate Portfolio</span>
+                    <h1 class="text-4xl font-extrabold text-gray-900 mt-2 mb-4">Our Subsidiary Ecosystem</h1>
+                    <p class="text-gray-600 text-lg">Designed with a scalable architecture to seamlessly integrate future enterprises without disrupting our core brand.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <!-- Subsidiary 1 -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 bg-brand-pale text-brand rounded-xl flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-building-shield"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">The Estate Gallery</h3>
+                            <p class="text-gray-600 mb-6 text-sm">Real estate acquisitions, prime land banking, and secure property advisory services.</p>
+                        </div>
+                        <button onclick="switchPage('estate-gallery')" class="w-full bg-brand text-white py-2.5 rounded-lg font-semibold text-sm hover:bg-brand-dark transition">Visit Division</button>
+                    </div>
+
+                    <!-- Subsidiary 2 -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 bg-brand-pale text-brand rounded-xl flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">House of Enlightenment</h3>
+                            <p class="text-gray-600 mb-6 text-sm">Community empowerment, educational initiatives, and intellectual leadership programs.</p>
+                        </div>
+                        <button onclick="switchPage('house-of-enlightenment')" class="w-full bg-brand text-white py-2.5 rounded-lg font-semibold text-sm hover:bg-brand-dark transition">Visit Division</button>
+                    </div>
+
+                    <!-- Subsidiary 3 -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 bg-brand-pale text-brand rounded-xl flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-3">Z-Tech Innovations</h3>
+                            <p class="text-gray-600 mb-6 text-sm">Information technology consulting, cybersecurity frameworks, and custom software solutions.</p>
+                        </div>
+                        <button onclick="switchPage('z-tech')" class="w-full bg-brand text-white py-2.5 rounded-lg font-semibold text-sm hover:bg-brand-dark transition">Visit Division</button>
+                    </div>
+                </div>
+
+                <!-- Future Expansion Notice -->
+                <div class="bg-white p-8 rounded-2xl border border-dashed border-emerald-400 text-center max-w-2xl mx-auto">
+                    <h4 class="text-lg font-bold text-gray-900 mb-2"><i class="fa-solid fa-plus-circle text-brand mr-2"></i> Future Subsidiary Integration</h4>
+                    <p class="text-sm text-gray-600">Our modular corporate architecture allows Fortun8 Group to effortlessly onboard new ventures, agricultural initiatives, and financial tech divisions in future phases.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= BOOKS PAGE ================= -->
+        <div id="page-books" class="page-section hidden py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand font-bold text-sm tracking-wider uppercase">Literary Works</span>
+                    <h1 class="text-4xl font-extrabold text-gray-900 mt-2 mb-4">Books by Boniface Ejembi</h1>
+                    <p class="text-gray-600 text-lg">Practical guides engineered to keep you ahead in productivity, AI, and corporate peace of mind.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Book 1 -->
+                    <div class="bg-gray-50 p-8 rounded-3xl border border-gray-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <span class="bg-brand text-white text-xs font-semibold px-3 py-1 rounded-full">Bestseller</span>
+                            <h2 class="text-2xl font-bold text-gray-900 mt-4 mb-3">100 Prompts That Will Keep You Ahead</h2>
+                            <p class="text-gray-600 mb-6 leading-relaxed">A definitive collection of prompt engineering strategies and AI communication blueprints to multiply your daily output and maintain a competitive edge.</p>
+                        </div>
+                        <div class="pt-6 border-t border-gray-200 flex items-center justify-between">
+                            <span class="font-bold text-gray-900">Instant Digital Delivery</span>
+                            <a href="https://selar.com/q06d10mk41" target="_blank" class="bg-brand text-white px-6 py-3 rounded-xl font-bold hover:bg-brand-dark transition shadow">
+                                Buy on Selar <i class="fa-solid fa-external-link-alt ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Book 2 -->
+                    <div class="bg-gray-50 p-8 rounded-3xl border border-gray-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <span class="bg-brand text-white text-xs font-semibold px-3 py-1 rounded-full">Essential Read</span>
+                            <h2 class="text-2xl font-bold text-gray-900 mt-4 mb-3">Sleep Like a Baby</h2>
+                            <p class="text-gray-600 mb-6 leading-relaxed">Your definitive handbook on eliminating corporate anxiety, securing investments, and building foolproof operational systems that safeguard your financial future.</p>
+                        </div>
+                        <div class="pt-6 border-t border-gray-200 flex items-center justify-between">
+                            <span class="font-bold text-gray-900">Instant Digital Delivery</span>
+                            <a href="https://selar.com/rtal1z865r" target="_blank" class="bg-brand text-white px-6 py-3 rounded-xl font-bold hover:bg-brand-dark transition shadow">
+                                Buy on Selar <i class="fa-solid fa-external-link-alt ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= THE ESTATE GALLERY PAGE ================= -->
+        <div id="page-estate-gallery" class="page-section hidden py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand font-bold text-sm tracking-wider uppercase">The Estate Gallery</span>
+                    <h1 class="text-4xl font-extrabold text-gray-900 mt-2 mb-4">Elite Real Estate Portfolios</h1>
+                    <p class="text-gray-600 text-lg">Discover verified luxury properties, prime land investments, and high-yield real estate opportunities in Lagos, Nigeria.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <!-- Property 1 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200">
+                        <div class="h-48 bg-gradient-to-r from-emerald-800 to-brand flex items-center justify-center text-white text-xl font-bold">
+                            Lekki Prime Estate
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-brand uppercase">Lagos, Nigeria</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-1 mb-2">Makarios Luxury Enclave</h3>
+                            <p class="text-gray-600 text-sm mb-4">Exquisite residential plots featuring world-class infrastructural amenities and guaranteed title security.</p>
+                            <button onclick="openBookingModal()" class="w-full bg-brand text-white py-2 rounded-lg font-semibold text-sm hover:bg-brand-dark transition">Inquire Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Property 2 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200">
+                        <div class="h-48 bg-gradient-to-r from-emerald-700 to-emerald-900 flex items-center justify-center text-white text-xl font-bold">
+                            Commercial Hub
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-brand uppercase">Victoria Island, Lagos</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-1 mb-2">Fortun8 Business Towers</h3>
+                            <p class="text-gray-600 text-sm mb-4">Premium commercial office spaces designed for multinational enterprises and high-growth startups.</p>
+                            <button onclick="openBookingModal()" class="w-full bg-brand text-white py-2 rounded-lg font-semibold text-sm hover:bg-brand-dark transition">Inquire Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Property 3 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200">
+                        <div class="h-48 bg-gradient-to-r from-brand to-emerald-950 flex items-center justify-center text-white text-xl font-bold">
+                            Investment Land
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-brand uppercase">Epe Corridor, Lagos</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-1 mb-2">Greenfield Land Bank</h3>
+                            <p class="text-gray-600 text-sm mb-4">High-appreciation land banking opportunities with complete documentation and zero encumbrances.</p>
+                            <button onclick="openBookingModal()" class="w-full bg-brand text-white py-2 rounded-lg font-semibold text-sm hover:bg-brand-dark transition">Inquire Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= HOUSE OF ENLIGHTENMENT PAGE ================= -->
+        <div id="page-house-of-enlightenment" class="page-section hidden py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-16">
+                    <span class="text-brand font-bold text-sm tracking-wider uppercase">Community Initiative</span>
+                    <h1 class="text-4xl font-extrabold text-gray-900 mt-2 mb-4">House of Enlightenment</h1>
+                    <p class="text-gray-600 text-lg">Igniting minds, fostering community development, and building a culture of intellectual excellence.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-gray-50 p-8 lg:p-12 rounded-3xl border border-gray-200">
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Empowering the Next Generation of Thinkers</h2>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            House of Enlightenment is an outreach and community development platform founded to champion education, mentorship, and civic responsibility. 
+                        </p>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Through targeted seminars, mentorship circles, and digital enlightenment campaigns, we equip individuals with the clarity and mental fortitude required to excel in leadership and enterprise.
+                        </p>
+                        <button onclick="switchPage('contact')" class="bg-brand text-white px-6 py-3 rounded-xl font-bold hover:bg-brand-dark transition shadow">Join Our Community</button>
+                    </div>
+                    <div class="bg-brand text-white p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-bold mb-4">Core Focus Areas</h3>
+                        <ul class="space-y-4 text-emerald-100">
+                            <li class="flex items-center"><i class="fa-solid fa-check mr-3 text-emerald-400"></i> Intellectual Capacity Building</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check mr-3 text-emerald-400"></i> Youth Mentorship & Guidance</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check mr-3 text-emerald-400"></i> Leadership & Ethics Training</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check mr-3 text-emerald-400"></i> Community Outreach Programs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= Z-TECH INNOVATIONS PAGE ================= -->
+        <div id="page-z-tech" class="page-section hidden py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-16">
+                    <span class="text-brand font-bold text-sm tracking-wider uppercase">Technology Division</span>
+                    <h1 class="text-4xl font-extrabold text-gray-900 mt-2 mb-4">Z-Tech Innovations</h1>
+                    <p class="text-gray-600 text-lg">Empowering businesses with robust cloud architecture, custom software, and advanced cybersecurity frameworks.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                        <div class="w-12 h-12 bg-brand-pale text-brand rounded-xl flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Cybersecurity Advisory</h3>
+                        <p class="text-gray-600 text-sm">Protecting digital assets, evaluating vulnerability vectors, and implementing enterprise security protocols.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                        <div class="w-12 h-12 bg-brand-pale text-brand rounded-xl flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-cloud"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Cloud Architecture</h3>
+                        <p class="text-gray-600 text-sm">Scalable, high-availability cloud infrastructure design ensuring data consistency and optimal performance.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+                        <div class="w-12 h-12 bg-brand-pale text-brand rounded-xl flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Custom Digital Solutions</h3>
+                        <p class="text-gray-600 text-sm">Tailored web platforms, automated workflows, and enterprise application development for modern businesses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= BLOG PAGE ================= -->
+        <div id="page-blog" class="page-section hidden py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand font-bold text-sm tracking-wider uppercase">Official Blog</span>
+                    <h1 class="text-4xl font-extrabold text-gray-900 mt-2 mb-4">Articles & Insights</h1>
+                    <p class="text-gray-600 text-lg">Explore our published articles on real estate due diligence and corporate security.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Blog 1 -->
+                    <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-semibold text-brand uppercase">Real Estate</span>
+                            <h2 class="text-2xl font-bold text-gray-900 mt-2 mb-4">Major Due Diligence Checklist in Real Estate</h2>
+                            <p class="text-gray-600 mb-6 text-sm leading-relaxed">A comprehensive guide designed to help investors verify land titles, survey plans, and government allocations before committing capital.</p>
+                        </div>
+                        <a href="https://ejembiboniface.blogspot.com/2026/01/major-due-diligence-checklist-in-real.html" target="_blank" class="text-brand font-bold text-sm inline-flex items-center hover:underline">
+                            Read on Blogspot <i class="fa-solid fa-external-link-alt ml-2 text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Blog 2 -->
+                    <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-semibold text-brand uppercase">Corporate Security</span>
+                            <h2 class="text-2xl font-bold text-gray-900 mt-2 mb-4">The Anatomy of Corporate Scam</h2>
+                            <p class="text-gray-600 mb-6 text-sm leading-relaxed">An analytical breakdown of modern fraud mechanisms in business transactions and how to insulate your corporate structures.</p>
+                        </div>
+                        <a href="https://ejembiboniface.blogspot.com/2026/01/the-anatomy-of-corporate-scam.html" target="_blank" class="text-brand font-bold text-sm inline-flex items-center hover:underline">
+                            Read on Blogspot <i class="fa-solid fa-external-link-alt ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= PODCAST PAGE ================= -->
+        <div id="page-podcast" class="page-section hidden py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="max-w-2xl mx-auto bg-white p-12 rounded-3xl shadow-md border border-gray-200">
+                    <span class="bg-emerald-100 text-brand text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">Audio Broadcast</span>
+                    <h1 class="text-4xl font-extrabold text-gray-900 mt-6 mb-4">Fortun8 Podcast</h1>
+                    <p class="text-gray-600 mb-8">Discussions on wealth, real estate market dynamics, technology, and visionary leadership with Boniface Ejembi and special guests.</p>
+                    <div class="inline-block bg-brand text-white px-8 py-3 rounded-xl font-bold tracking-widest uppercase shadow">
+                        Coming Soon
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= RESOURCES PAGE ================= -->
+        <div id="page-resources" class="page-section hidden py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand font-bold text-sm tracking-wider uppercase">Free Resources</span>
+                    <h1 class="text-4xl font-extrabold text-gray-900 mt-2 mb-4">Downloads & Toolkits</h1>
+                    <p class="text-gray-600 text-lg">Practical guides and templates to elevate your business operations and investment strategies.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Real Estate Verification Guide</h3>
+                        <p class="text-gray-600 text-sm mb-6">A quick-reference PDF checklist for verifying property titles in Lagos State.</p>
+                        <button onclick="openBookingModal()" class="text-brand font-bold text-sm hover:underline">Request Access <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Prompt Engineering Starter Sheet</h3>
+                        <p class="text-gray-600 text-sm mb-6">Sample templates from "100 Prompts That Will Keep You Ahead".</p>
+                        <button onclick="openBookingModal()" class="text-brand font-bold text-sm hover:underline">Request Access <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= CONTACT PAGE ================= -->
+        <div id="page-contact" class="page-section hidden py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center mb-16">
+                    <span class="text-brand font-bold text-sm tracking-wider uppercase">Get In Touch</span>
+                    <h1 class="text-4xl font-extrabold text-gray-900 mt-2 mb-4">Contact Fortun8 Group</h1>
+                    <p class="text-gray-600 text-lg">Reach out for business inquiries, real estate consultations, or speaking engagements.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto bg-white p-8 lg:p-12 rounded-3xl border border-gray-200 shadow-sm">
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Office Headquarters</h2>
+                        <ul class="space-y-6 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-location-dot text-brand text-xl mt-1 mr-4"></i>
+                                <div><strong>Location:</strong><br>Lagos, Nigeria</div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-envelope text-brand text-xl mt-1 mr-4"></i>
+                                <div><strong>Direct Email:</strong><br><a href="mailto:ztechinnovationltd@gmail.com" class="text-brand hover:underline">ztechinnovationltd@gmail.com</a></div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-clock text-brand text-xl mt-1 mr-4"></i>
+                                <div><strong>Consultation Hours:</strong><br>Monday – Friday: 11:00 AM – 3:00 PM WAT</div>
+                            </li>
+                        </ul>
+                        <div class="mt-8">
+                            <button onclick="openBookingModal()" class="bg-brand text-white w-full py-3 rounded-xl font-bold hover:bg-brand-dark transition shadow">Book a 30-Min Consultation</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Send a Message</h2>
+                        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                            <input type="hidden" name="to" value="ztechinnovationltd@gmail.com">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                                <input type="text" name="name" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:border-brand">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" name="email" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:border-brand">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea name="message" rows="4" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:border-brand"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-brand text-white py-3 rounded-xl font-bold hover:bg-brand-dark transition shadow">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-brand flex items-center justify-center text-white font-bold text-sm">F8</div>
+                        <span class="text-xl font-black tracking-tight">FORTUN<span class="text-brand">8</span> GROUP</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">Building wealth through innovation, knowledge and real estate. Founded by Boniface Ejembi.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-200 mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><button onclick="switchPage('home')" class="hover:text-white">Home</button></li>
+                        <li><button onclick="switchPage('about')" class="hover:text-white">About Us</button></li>
+                        <li><button onclick="switchPage('businesses')" class="hover:text-white">Businesses</button></li>
+                        <li><button onclick="switchPage('books')" class="hover:text-white">Books</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-200 mb-4">Subsidiaries</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><button onclick="switchPage('estate-gallery')" class="hover:text-white">The Estate Gallery</button></li>
+                        <li><button onclick="switchPage('house-of-enlightenment')" class="hover:text-white">House of Enlightenment</button></li>
+                        <li><button onclick="switchPage('z-tech')" class="hover:text-white">Z-Tech Innovations</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-200 mb-4">Contact</h4>
+                    <p class="text-sm text-gray-400 mb-2">Lagos, Nigeria</p>
+                    <p class="text-sm text-gray-400"><a href="mailto:ztechinnovationltd@gmail.com" class="hover:text-white underline">ztechinnovationltd@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
+                &copy; 2026 Fortun8 Group. All rights reserved. Designed for elite excellence.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal (Google Calendar style 11AM - 3PM, max 30 min) -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-8 relative shadow-2xl">
+            <button onclick="closeBookingModal()" class="absolute top-6 right-6 text-gray-400 hover:text-gray-600 text-xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center mb-6">
+                <span class="text-xs font-bold text-brand uppercase tracking-wider">Consultation Booking</span>
+                <h3 class="text-2xl font-extrabold text-gray-900 mt-1">Book a 30-Minute Session</h3>
+                <p class="text-sm text-gray-500 mt-1">Available: Monday – Friday (11:00 AM – 3:00 PM WAT)</p>
+            </div>
+
+            <form onsubmit="handleBookingSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Your Full Name</label>
+                    <input type="text" id="booking-name" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:border-brand">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                    <input type="email" id="booking-email" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:border-brand">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Select Date</label>
+                        <input type="date" id="booking-date" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:border-brand">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Select Time Slot</label>
+                        <select id="booking-time" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:border-brand">
+                            <option value="">Choose 30-min slot</option>
+                            <option value="11:00 AM - 11:30 AM">11:00 AM - 11:30 AM</option>
+                            <option value="11:30 AM - 12:00 PM">11:30 AM - 12:00 PM</option>
+                            <option value="12:00 PM - 12:30 PM">12:00 PM - 12:30 PM</option>
+                            <option value="12:30 PM - 1:00 PM">12:30 PM - 1:00 PM</option>
+                            <option value="1:00 PM - 1:30 PM">1:00 PM - 1:30 PM</option>
+                            <option value="1:30 PM - 2:00 PM">1:30 PM - 2:00 PM</option>
+                            <option value="2:00 PM - 2:30 PM">2:00 PM - 2:30 PM</option>
+                            <option value="2:30 PM - 3:00 PM">2:30 PM - 3:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Topic / Discussion Purpose</label>
+                    <textarea id="booking-purpose" rows="3" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:border-brand" placeholder="Real Estate, Tech Consulting, Mentorship..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-brand text-white py-3 rounded-xl font-bold hover:bg-brand-dark transition shadow">Confirm & Notify</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript for Page Switching & Modal -->
+    <script>
+        function switchPage(pageId) {
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(sec => sec.classList.add('hidden'));
+            
+            const target = document.getElementById('page-' + pageId);
+            if (target) {
+                target.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function openBookingModal() {
+            document.getElementById('booking-modal').classList.remove('hidden');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('booking-modal').classList.add('hidden');
+        }
+
+        function handleBookingSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('booking-name').value;
+            const date = document.getElementById('booking-date').value;
+            const time = document.getElementById('booking-time').value;
+            alert(`Thank you, ${name}! Your 30-minute consultation has been scheduled for ${date} at ${time}. Both you and management have been notified via ztechinnovationltd@gmail.com.`);
+            closeBookingModal();
+        }
+    </script>
+</body>
+</html>
